@@ -26,13 +26,13 @@ public class PullZoomView extends ScrollView {
     private static final String TAG_HEADER = "header";        //头布局Tag
     private static final String TAG_ZOOM = "zoom";            //缩放布局Tag
     private static final String TAG_CONTENT = "content";      //内容布局Tag
-    private float sensitive = 1.5f;         //放大的敏感系数
 
+    private float sensitive = 1.5f;         //放大的敏感系数
+    private int zoomTime = 500;             //头部缩放时间，单位 毫秒
     private boolean isParallax = true;      //是否让头部具有视差动画
     private boolean isZoomEnable = true;    //是否允许头部放大
-    private int zoomTime = 500;             //头部缩放时间，单位 毫秒
-    private Scroller scroller;              //辅助缩放的对象
 
+    private Scroller scroller;              //辅助缩放的对象
     private boolean isActionDown = false;   //第一次接收的事件是否是Down事件
     private boolean isZooming = false;      //是否正在被缩放
     private MarginLayoutParams headerParams;//头部的参数
@@ -40,6 +40,7 @@ public class PullZoomView extends ScrollView {
     private View headerView;                //头布局
     private View zoomView;                  //用于缩放的View
     private View contentView;               //主体内容View
+    private float lastEventX;               //Move事件最后一次发生时的X坐标
     private float lastEventY;               //Move事件最后一次发生时的Y坐标
     private float downX;                    //Down事件的X坐标
     private float downY;                    //Down事件的Y坐标
@@ -159,6 +160,10 @@ public class PullZoomView extends ScrollView {
         }
     }
 
+    /**
+     * 主要用于解决 RecyclerView嵌套，直接拦截事件，可能会出现其他问题
+     * 如果不需要使用  RecyclerView，可以将这里代码注释掉
+     */
     @Override
     public boolean onInterceptTouchEvent(MotionEvent e) {
         int action = e.getAction();
@@ -180,31 +185,39 @@ public class PullZoomView extends ScrollView {
     public boolean onTouchEvent(MotionEvent ev) {
         if (!isZoomEnable) return super.onTouchEvent(ev);
 
+        float currentX = ev.getX();
         float currentY = ev.getY();
         switch (ev.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
-                lastEventY = currentY;
-                isActionDown = true;
+                downX = lastEventX = currentX;
+                downY = lastEventY = currentY;
                 scroller.abortAnimation();
+                isActionDown = true;
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (!isActionDown) {
-                    lastEventY = currentY;
-                    isActionDown = true;
+                    downX = lastEventX = currentX;
+                    downY = lastEventY = currentY;
                     scroller.abortAnimation();
+                    isActionDown = true;
                 }
+                float shiftX = Math.abs(currentX - downX);
+                float shiftY = Math.abs(currentY - downY);
+                float dx = currentX - lastEventX;
                 float dy = currentY - lastEventY;
                 lastEventY = currentY;
                 if (isTop()) {
-                    int height = (int) (headerParams.height + dy / sensitive + 0.5);
-                    if (height <= headerHeight) {
-                        height = headerHeight;
-                        isZooming = false;
-                    } else {
-                        isZooming = true;
+                    if (shiftY > shiftX && shiftY > touchSlop) {
+                        int height = (int) (headerParams.height + dy / sensitive + 0.5);
+                        if (height <= headerHeight) {
+                            height = headerHeight;
+                            isZooming = false;
+                        } else {
+                            isZooming = true;
+                        }
+                        headerParams.height = height;
+                        headerView.setLayoutParams(headerParams);
                     }
-                    headerParams.height = height;
-                    headerView.setLayoutParams(headerParams);
                 }
                 break;
             case MotionEvent.ACTION_UP:
@@ -232,5 +245,21 @@ public class PullZoomView extends ScrollView {
 
     private boolean isTop() {
         return getScrollY() <= 0;
+    }
+
+    public void setSensitive(float sensitive) {
+        this.sensitive = sensitive;
+    }
+
+    public void setIsParallax(boolean isParallax) {
+        this.isParallax = isParallax;
+    }
+
+    public void setIsZoomEnable(boolean isZoomEnable) {
+        this.isZoomEnable = isZoomEnable;
+    }
+
+    public void setZoomTime(int zoomTime) {
+        this.zoomTime = zoomTime;
     }
 }

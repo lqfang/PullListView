@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="com.lzy.pullzoomview"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest package="com.lzy.pullzoomview"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -21,9 +20,12 @@
         <activity android:name=".PullListViewActivity"/>
         <activity android:name=".PullGridViewActivity"/>
         <activity android:name=".PullScrollViewActivity"/>
-        <activity android:name=".TestActivity"/>
         <activity android:name=".PullWebViewActivity"/>
         <activity android:name=".PullRecyclerViewActivity"/>
+        <activity android:name=".PullViewActivity">
+        </activity>
+        <activity android:name=".PullViewGroupActivity">
+        </activity>
     </application>
 
 </manifest>

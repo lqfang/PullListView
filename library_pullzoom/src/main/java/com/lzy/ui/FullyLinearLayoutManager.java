@@ -39,8 +39,6 @@ public class FullyLinearLayoutManager extends LinearLayoutManager {
         final int widthSize = View.MeasureSpec.getSize(widthSpec);
         final int heightSize = View.MeasureSpec.getSize(heightSpec);
 
-        Log.i(TAG, "onMeasure called. \nwidthMode " + widthMode + " \nheightMode " + heightSpec + " \nwidthSize " + widthSize + " \nheightSize " + heightSize + " \ngetItemCount() " + getItemCount());
-
         int width = 0;
         int height = 0;
         for (int i = 0; i < getItemCount(); i++) {

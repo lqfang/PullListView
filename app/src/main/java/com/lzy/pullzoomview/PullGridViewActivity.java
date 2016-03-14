@@ -1,5 +1,6 @@
 package com.lzy.pullzoomview;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,7 +29,16 @@ public class PullGridViewActivity extends AppCompatActivity implements AdapterVi
         gridView.setAdapter(new MyAdapter());
         gridView.setOnItemClickListener(this);
 
+        Intent intent = getIntent();
+        float sensitive = intent.getFloatExtra("sensitive", 1.5f);
+        int zoomTime = intent.getIntExtra("zoomTime", 500);
+        boolean isParallax = intent.getBooleanExtra("isParallax", true);
+        boolean isZoomEnable = intent.getBooleanExtra("isZoomEnable", true);
         PullZoomView pzv = (PullZoomView) findViewById(R.id.pzv);
+        pzv.setIsParallax(isParallax);
+        pzv.setIsZoomEnable(isZoomEnable);
+        pzv.setSensitive(sensitive);
+        pzv.setZoomTime(zoomTime);
         pzv.setOnScrollListener(new PullZoomView.OnScrollListener() {
             @Override
             public void onScroll(int l, int t, int oldl, int oldt) {

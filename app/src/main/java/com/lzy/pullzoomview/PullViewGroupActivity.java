@@ -1,21 +1,17 @@
 package com.lzy.pullzoomview;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.webkit.WebView;
+import android.os.Bundle;
 
 import com.lzy.ui.PullZoomView;
 
-public class PullWebViewActivity extends AppCompatActivity {
+public class PullViewGroupActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pull_webview);
-
-        WebView webView = (WebView) findViewById(R.id.webView);
-        webView.loadUrl("https://github.com/jeasonlzy0216");
+        setContentView(R.layout.activity_pull_view_group);
 
         Intent intent = getIntent();
         float sensitive = intent.getFloatExtra("sensitive", 1.5f);

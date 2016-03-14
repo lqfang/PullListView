@@ -5,6 +5,89 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#888"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="sensitive"
+            android:textColor="#FFF"/>
+
+        <TextView
+            android:id="@+id/tv_sensitive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1.5"
+            android:textColor="#FFF"/>
+
+        <SeekBar
+            android:id="@+id/sb_sensitive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#888"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="zoomTime"
+            android:textColor="#FFF"/>
+
+        <TextView
+            android:id="@+id/tv_zoomTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="1.5"
+            android:textColor="#FFF"/>
+
+        <SeekBar
+            android:id="@+id/sb_zoomTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#888"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/cb_isParallax"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="isParallax"
+            android:textColor="#FFF"/>
+
+        <CheckBox
+            android:id="@+id/cb_isZoomEnable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="isZoomEnable"
+            android:textColor="#FFF"/>
+    </LinearLayout>
+
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
