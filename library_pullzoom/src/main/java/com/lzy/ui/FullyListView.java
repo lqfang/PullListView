@@ -13,16 +13,16 @@ import android.widget.ListView;
  * 修订历史：
  * ================================================
  */
-public class NoScrollListView extends ListView {
-    public NoScrollListView(Context context) {
+public class FullyListView extends ListView {
+    public FullyListView(Context context) {
         super(context);
     }
 
-    public NoScrollListView(Context context, AttributeSet attrs) {
+    public FullyListView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public NoScrollListView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public FullyListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

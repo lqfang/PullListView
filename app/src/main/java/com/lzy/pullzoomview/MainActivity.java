@@ -18,7 +18,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.activity_main);
 
         ArrayList<String> strings = new ArrayList<>();
-        strings.add("PullZoomActivity");
+        strings.add("PullScrollViewActivity");
+        strings.add("PullListViewActivity");
+        strings.add("PullGridViewActivity");
+        strings.add("PullWebViewActivity");
+        strings.add("PullRecyclerViewActivity");
+        strings.add("TestActivity");
 
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, strings));
@@ -29,7 +34,22 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         switch (position) {
             case 0:
-                startActivity(new Intent(this, PullZoomActivity.class));
+                startActivity(new Intent(this, PullScrollViewActivity.class));
+                break;
+            case 1:
+                startActivity(new Intent(this, PullListViewActivity.class));
+                break;
+            case 2:
+                startActivity(new Intent(this, PullGridViewActivity.class));
+                break;
+            case 3:
+                startActivity(new Intent(this, PullWebViewActivity.class));
+                break;
+            case 4:
+                startActivity(new Intent(this, PullRecyclerViewActivity.class));
+                break;
+            case 5:
+                startActivity(new Intent(this, TestActivity.class));
                 break;
         }
     }
