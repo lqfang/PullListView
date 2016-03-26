@@ -6,16 +6,16 @@
 ## 演示
  ![image](https://github.com/jeasonlzy0216/PullZoomView/blob/master/screenshots/demo1.png)![image](https://github.com/jeasonlzy0216/PullZoomView/blob/master/screenshots/demo2.png)![image](https://github.com/jeasonlzy0216/PullZoomView/blob/master/screenshots/demo3.png)![image](https://github.com/jeasonlzy0216/PullZoomView/blob/master/screenshots/demo4.gif)![image](https://github.com/jeasonlzy0216/PullZoomView/blob/master/screenshots/demo5.gif)![image](https://github.com/jeasonlzy0216/PullZoomView/blob/master/screenshots/demo6.gif)
 
-## 1.用法
-
-使用前，对于Android Studio的用户，可以选择添加:
-```java
-    compile project(':library_pullzoom')
-```
-或者
+## 1.温馨提示
+  该项目和我github上其他的view相关的项目已经一起打包上传到jCenter仓库中（源码地址 [https://github.com/jeasonlzy0216/ViewCore](https://github.com/jeasonlzy0216/ViewCore) ），使用的时候可以直接使用compile依赖，用法如下
 ```java
 	compile 'com.lzy.widget:view-core:+'
 ```
+或者使用
+```java
+    compile project(':library_pullzoom')
+```
+
 
 ## 2.实现原理 
 PullZoomView 继承至 ScrollView，通过布局设置 Tag 和 重写滑动事件，达到 PullZoomView 与 其他子View嵌套使用，同时增加了外部监听器。
