@@ -12,6 +12,10 @@
 ```java
     compile project(':library_pullzoom')
 ```
+或者
+```java
+	compile 'com.lzy.widget:view-core:+'
+```
 
 ## 2.实现原理 
 PullZoomView 继承至 ScrollView，通过布局设置 Tag 和 重写滑动事件，达到 PullZoomView 与 其他子View嵌套使用，同时增加了外部监听器。
@@ -51,9 +55,9 @@ PullZoomView 继承至 ScrollView，通过布局设置 Tag 和 重写滑动事�
 	android:tag="zoom"
 	android:tag="content"
 ```
- * 与ListView嵌套使用时，ListView需要使用本库中提供的 `FullyListView`
- * 与GridView嵌套使用时，GridView需要使用本库中提供的 `FullyGridView`
- * 与RecyclerView嵌套使用时，RecyclerView使用v7包中原生的即可，但是LayoutManager需要使用本库中提供的三个管理者，分别是 `FullyLinearLayoutManager`, `FullyGridLayoutManager`, `FullyStaggeredGridLayoutManager`
+ * 与ListView嵌套使用时，ListView需要使用本库中提供的 `ExpandListView`
+ * 与GridView嵌套使用时，GridView需要使用本库中提供的 `ExpandGridView`
+ * 与RecyclerView嵌套使用时，RecyclerView使用v7包中原生的即可，但是LayoutManager需要使用本库中提供的三个管理者，分别是 `ExpandLinearLayoutManager`, `ExpandGridLayoutManager`, `ExpandStaggeredGridLayoutManager`
  * 其他例如 ScrollView，WebView，View子类，ViewGroup子类均使用原生类即可，不用做任何改动。
 
 ## 3.代码参考
