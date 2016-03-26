@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.webkit.WebView;
 
-import com.lzy.ui.PullZoomView;
+import com.lzy.widget.PullZoomView;
 
 public class PullWebViewActivity extends AppCompatActivity {
 

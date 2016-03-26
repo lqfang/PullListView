@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.lzy.ui.PullZoomView;
+import com.lzy.widget.PullZoomView;
 
 public class PullViewGroupActivity extends AppCompatActivity {
 

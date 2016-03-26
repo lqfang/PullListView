@@ -1,4 +1,4 @@
-package com.lzy.ui;
+package com.lzy.widget.manager;
 
 import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
@@ -15,12 +15,12 @@ import android.view.ViewGroup;
  * 修订历史：
  * ================================================
  */
-public class FullyGridLayoutManager extends GridLayoutManager {
-    public FullyGridLayoutManager(Context context, int spanCount) {
+public class ExpandGridLayoutManager extends GridLayoutManager {
+    public ExpandGridLayoutManager(Context context, int spanCount) {
         super(context, spanCount);
     }
 
-    public FullyGridLayoutManager(Context context, int spanCount, int orientation, boolean reverseLayout) {
+    public ExpandGridLayoutManager(Context context, int spanCount, int orientation, boolean reverseLayout) {
         super(context, spanCount, orientation, reverseLayout);
     }
 

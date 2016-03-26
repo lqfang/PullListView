@@ -1,4 +1,4 @@
-package com.lzy.ui;
+package com.lzy.widget.manager;
 
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -14,9 +14,9 @@ import android.view.ViewGroup;
  * 修订历史：
  * ================================================
  */
-public class FullyStaggeredGridLayoutManager extends StaggeredGridLayoutManager {
+public class ExpandStaggeredGridLayoutManager extends StaggeredGridLayoutManager {
 
-    public FullyStaggeredGridLayoutManager(int spanCount, int orientation) {
+    public ExpandStaggeredGridLayoutManager(int spanCount, int orientation) {
         super(spanCount, orientation);
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.lzy.ui.PullZoomView
+<com.lzy.widget.PullZoomView
     android:id="@+id/pzv"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -15,4 +15,4 @@
         <include layout="@layout/include_scrollview"/>
     </LinearLayout>
 
-</com.lzy.ui.PullZoomView>
+</com.lzy.widget.PullZoomView>

@@ -14,7 +14,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.lzy.ui.PullZoomView;
+import com.lzy.widget.PullZoomView;
 
 import java.util.ArrayList;
 

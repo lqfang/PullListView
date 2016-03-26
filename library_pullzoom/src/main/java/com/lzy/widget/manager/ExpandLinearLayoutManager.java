@@ -1,9 +1,8 @@
-package com.lzy.ui;
+package com.lzy.widget.manager;
 
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -17,17 +16,17 @@ import android.view.ViewGroup;
  * ================================================
  */
 
-public class FullyLinearLayoutManager extends LinearLayoutManager {
+public class ExpandLinearLayoutManager extends LinearLayoutManager {
 
-    private static final String TAG = FullyLinearLayoutManager.class.getSimpleName();
+    private static final String TAG = ExpandLinearLayoutManager.class.getSimpleName();
 
     private int[] mMeasuredDimension = new int[2];
 
-    public FullyLinearLayoutManager(Context context) {
+    public ExpandLinearLayoutManager(Context context) {
         super(context);
     }
 
-    public FullyLinearLayoutManager(Context context, int orientation, boolean reverseLayout) {
+    public ExpandLinearLayoutManager(Context context, int orientation, boolean reverseLayout) {
         super(context, orientation, reverseLayout);
     }
 

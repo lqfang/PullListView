@@ -1,8 +1,7 @@
-package com.lzy.ui;
+package com.lzy.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.GridView;
 import android.widget.ListView;
 
 /**
@@ -14,16 +13,16 @@ import android.widget.ListView;
  * 修订历史：
  * ================================================
  */
-public class FullyGridView extends GridView {
-    public FullyGridView(Context context) {
+public class ExpandListView extends ListView {
+    public ExpandListView(Context context) {
         super(context);
     }
 
-    public FullyGridView(Context context, AttributeSet attrs) {
+    public ExpandListView(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public FullyGridView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ExpandListView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

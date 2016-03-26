@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.lzy.ui.PullZoomView;
+import com.lzy.widget.PullZoomView;
 
 public class PullScrollViewActivity extends Activity {
     @Override

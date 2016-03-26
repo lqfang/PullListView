@@ -9,8 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.lzy.ui.FullyLinearLayoutManager;
-import com.lzy.ui.PullZoomView;
+import com.lzy.widget.PullZoomView;
+import com.lzy.widget.manager.ExpandLinearLayoutManager;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ public class PullRecyclerViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pull_recyclerview);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new FullyLinearLayoutManager(this));
+        recyclerView.setLayoutManager(new ExpandLinearLayoutManager(this));
         recyclerView.setAdapter(new MyAdapter());
 
         Intent intent = getIntent();
