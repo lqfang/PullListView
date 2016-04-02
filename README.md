@@ -9,7 +9,7 @@
 ## 1.温馨提示
   该项目和我github上其他的view相关的项目已经一起打包上传到jCenter仓库中（源码地址 [https://github.com/jeasonlzy0216/ViewCore](https://github.com/jeasonlzy0216/ViewCore) ），使用的时候可以直接使用compile依赖，用法如下
 ```java
-	compile 'com.lzy.widget:view-core:0.1.4'
+	compile 'com.lzy.widget:view-core:0.1.5'
 ```
 或者使用
 ```java
@@ -62,10 +62,12 @@ PullZoomView 继承至 ScrollView，通过布局设置 Tag 和 重写滑动事�
 
 ## 3.代码参考
 该类`PullZoomView`对外提供了滑动监听器，三个方法分别表示
-`onScroll`: 表示`PullZoomView`滑动全程的监听
-`onHeaderScroll`: 表示头部从完全展现，到完全滑出的监听过程
-`onContentScroll`： 表示除了头部外，内容布局从最顶部滑动到最底部的监听过程
 
+ * `onScroll(int l, int t, int oldl, int oldt)`: 表示`PullZoomView`滑动全程的监听
+ * `onHeaderScroll(int currentY, int maxY)`: 表示头部从完全展现，到完全滑出的监听过程
+ * `onContentScroll(int l, int t, int oldl, int oldt)`： 表示除了头部外，内容布局从最顶部滑动到最底部的监听过程
+
+此外允许通过代码对滑动行为动态控制
 ```java
 	pzv.setIsParallax(true);    //允许视差动画
     pzv.setIsZoomEnable(true);  //允许头部放大
