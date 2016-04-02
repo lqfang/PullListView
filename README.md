@@ -60,7 +60,7 @@ PullZoomView 继承至 ScrollView，通过布局设置 Tag 和 重写滑动事�
  * 与RecyclerView嵌套使用时，RecyclerView使用v7包中原生的即可，但是LayoutManager需要使用本库中提供的三个管理者，分别是 `ExpandLinearLayoutManager`, `ExpandGridLayoutManager`, `ExpandStaggeredGridLayoutManager`
  * 其他例如 ScrollView，WebView，View子类，ViewGroup子类均使用原生类即可，不用做任何改动。
 
-## 3.代码参考
+## 5.代码参考
 该类`PullZoomView`对外提供了滑动监听器，三个方法分别表示
 
  * `onScroll(int l, int t, int oldl, int oldt)`: 表示`PullZoomView`滑动全程的监听
